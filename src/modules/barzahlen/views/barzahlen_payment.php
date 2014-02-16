@@ -24,6 +24,7 @@
 class barzahlen_payment extends barzahlen_payment_parent {
 
   protected $_sModuleId = "module:barzahlen";
+  private $_supportedCurrencies = array('EUR');
 
   /**
    * Executes parent method parent::render().
@@ -46,5 +47,17 @@ class barzahlen_payment extends barzahlen_payment_parent {
     $sShopId = $oxConfig->getShopId();
     $sModule = $this->_sModuleId;
     return $oxConfig->getShopConfVar('bzSandbox', $sShopId, $sModule);
+  }
+
+  /**
+   * Checks if current shop currency is support by Barzahlen.
+   *
+   * @return boolean
+   */
+  public function checkCurrency() {
+
+    $oxConfig = $this->getConfig();
+    $oCurrency = $oxConfig->getActShopCurrencyObject();
+    return in_array($oCurrency->name, $this->_supportedCurrencies);
   }
 }
