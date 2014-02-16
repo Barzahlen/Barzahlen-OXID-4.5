@@ -9,4 +9,4 @@ INSERT INTO `oxtplblocks` (`OXID`, `OXACTIVE`, `OXSHOPID`, `OXTEMPLATE`, `OXBLOC
 ('barzahlen_thankyou_1', 1, 'oxbaseshop', 'page/checkout/thankyou.tpl', 'checkout_thankyou_info', 1, 'page/checkout/thankyou/checkout_thankyou_info', 'barzahlen');
 
 INSERT INTO `oxpayments` (`OXID`, `OXACTIVE`, `OXDESC`, `OXADDSUM`, `OXADDSUMTYPE`, `OXADDSUMRULES`, `OXFROMBONI`, `OXFROMAMOUNT`, `OXTOAMOUNT`, `OXVALDESC`, `OXCHECKED`, `OXDESC_1`, `OXVALDESC_1`, `OXDESC_2`, `OXVALDESC_2`, `OXDESC_3`, `OXVALDESC_3`, `OXLONGDESC`, `OXLONGDESC_1`, `OXLONGDESC_2`, `OXLONGDESC_3`, `OXSORT`, `OXTSPAYMENTID`) VALUES
-('oxidbarzahlen', 1, 'Barzahlen', 0, 'abs', 0, 0, 0, 1000, '', 0, 'Barzahlen', '', '', '', '', '', '', '', '', '', -1, '');
+('oxidbarzahlen', 1, 'Barzahlen', 0, 'abs', 0, 0, 0, 999.99, '', 0, 'Barzahlen', '', '', '', '', '', '', '', '', '', -1, '');
