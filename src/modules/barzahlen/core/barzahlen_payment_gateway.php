@@ -21,7 +21,7 @@
  * @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
  */
 
-require_once dirname(__FILE__) . '/../api/loader.php';
+require_once getShopBasePath() . 'modules/barzahlen/api/loader.php';
 
 class barzahlen_payment_gateway extends barzahlen_payment_gateway_parent {
 
@@ -66,10 +66,7 @@ class barzahlen_payment_gateway extends barzahlen_payment_gateway_parent {
     }
 
     if($payment->isValid()) {
-      oxSession::setVar('barzahlenPaymentSlipLink', (string)$payment->getPaymentSlipLink());
-      oxSession::setVar('barzahlenExpirationNotice', (string)$payment->getExpirationNotice());
       oxSession::setVar('barzahlenInfotextOne', (string)$payment->getInfotext1());
-      oxSession::setVar('barzahlenInfotextTwo', (string)$payment->getInfotext2());
       $oOrder->oxorder__bztransaction = new oxField((int)$payment->getTransactionId());
       $oOrder->oxorder__bzstate = new oxField('pending');
       $oOrder->save();
@@ -92,10 +89,10 @@ class barzahlen_payment_gateway extends barzahlen_payment_gateway_parent {
     $sShopId = $oxConfig->getShopId();
     $sModule = $this->_sModuleId;
 
-    $shopId = $oxConfig->getShopConfVar('shopId', $sShopId, $sModule);
-    $paymentKey = $oxConfig->getShopConfVar('paymentKey', $sShopId, $sModule);
-    $sandbox = $oxConfig->getShopConfVar('sandbox', $sShopId, $sModule);
-    $debug = $oxConfig->getShopConfVar('debug', $sShopId, $sModule);
+    $shopId = $oxConfig->getShopConfVar('bzShopId', $sShopId, $sModule);
+    $paymentKey = $oxConfig->getShopConfVar('bzPaymentKey', $sShopId, $sModule);
+    $sandbox = $oxConfig->getShopConfVar('bzSandbox', $sShopId, $sModule);
+    $debug = $oxConfig->getShopConfVar('bzDebug', $sShopId, $sModule);
 
     $api = new Barzahlen_Api($shopId, $paymentKey, $sandbox);
     $api->setDebug($debug, self::LOGFILE);
