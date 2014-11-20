@@ -1,7 +1,8 @@
 # Barzahlen Payment Module (OXID 4.5)
 
 ## User Manual
-https://integration.barzahlen.de/de/shopsysteme/oxid/nutzerhandbuch-45
+DE - https://integration.barzahlen.de/de/shopsysteme/oxid/nutzerhandbuch-45  
+EN - https://integration.barzahlen.de/en/shopsystems/oxid/user-manual-45
 
 ## Modules
 payment => barzahlen/views/barzahlen_payment  
@@ -11,9 +12,14 @@ oxorder => barzahlen/core/barzahlen_order
 navigation => barzahlen/core/barzahlen_navigation
 
 ## Current Version
-1.1.4
+1.2.0
 
 ## Changelog
+
+### 1.2.0 (20.11.2014)
+* updated Barzahlen PHP API SDK (1.1.7)
+* callback returns 200 (OK) only after successful database update
+* improved payment selection
 
 ### 1.1.4 (15.05.2013)
 * updated Barzahlen PHP API SDK
@@ -41,7 +47,7 @@ navigation => barzahlen/core/barzahlen_navigation
 * initial release
 
 ## Support
-The Barzahlen Team will happily assist you with any problems or questions. Send us an email to support@barzahlen.de or use the contact form at http://www.barzahlen.de/partner/integration.
+The Barzahlen Team will happily assist you with any problems or questions. Send us an email to support@barzahlen.de or use the contact form at https://integration.barzahlen.de/en/support.
 
 ## Copyright
 (c) 2014, Cash Payment Solutions GmbH  
