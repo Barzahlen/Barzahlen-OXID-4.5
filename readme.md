@@ -1,5 +1,8 @@
 # Barzahlen Payment Module (OXID 4.5)
 
+## Deprecation Notice
+This module is no longer maintained and should not be used for new projects.
+
 ## User Manual
 DE - https://integration.barzahlen.de/de/shopsysteme/oxid/nutzerhandbuch-45  
 EN - https://integration.barzahlen.de/en/shopsystems/oxid/user-manual-45
